@@ -2,10 +2,17 @@ import styled from "styled-components";
 import { About } from "../styles";
 import Toggle from "./Toggle";
 import { AnimateSharedLayout } from "framer-motion";
+import { useScroll } from "./useScroll";
+import { scrollReveal } from "../animation";
 
 const FAQSection = () => {
+    const [element, controls] = useScroll();
     return (
-        <FAQ>
+        <FAQ
+            variants={scrollReveal}
+            ref={element}
+            animate={controls}
+            initial="hidden">
             <h2>
                 Any Questions <span>FAQ</span>
             </h2>
@@ -59,13 +66,14 @@ const FAQ = styled(About)`
     h2 {
         padding-bottom: 2rem;
         font-weight: lighter;
+        font-size: 3rem;
     }
     h3 {
         color: white;
     }
     h4 {
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .faq-line {
         background: #cccccc;

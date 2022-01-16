@@ -1,17 +1,28 @@
 //! Import Icons
 import clock from "../img/clock.svg";
-import diaphragm from "../img/diaphragm.svg"
+import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
-import teamwork from "../img/teamwork.svg"
-import home2 from "../img/home2.png"
+import teamwork from "../img/teamwork.svg";
+import home2 from "../img/home2.png";
 
 //! Styles
 import { About, Description, Image, Hide } from "../styles";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+//? Control WHEN an animation starts in framer motion not
+//? just when the components renders on screen
+import { useAnimation } from "framer-motion";
+import { fade, scrollReveal } from "../animation";
+import { useScroll } from "./useScroll";
 
 const ServicesSection = () => {
+    const [element, controls] = useScroll();
     return (
-        <Services>
+        <Services
+            variants={fade}
+            animate={controls}
+            initial="hidden"
+            ref={element}>
             <Description>
                 <h2>
                     High <span>quality</span> service.
@@ -51,37 +62,37 @@ const ServicesSection = () => {
                 <img src={home2} alt="" />
             </Image>
         </Services>
-    )
-}
+    );
+};
 
 //? Modifying an existing styled component
-const Services = styled(About) `
+const Services = styled(About)`
     h2 {
-        padding-bottom: 5rem; 
+        padding-bottom: 5rem;
     }
     p {
         width: 70%;
-        padding: 2rem 0rem 4rem 0rem
+        padding: 2rem 0rem 4rem 0rem;
     }
 `;
 
-const Cards = styled.div `
+const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
 `;
 
-const Card = styled.div `
+const Card = styled.div`
     flex-basis: 15rem;
     .icon {
         display: flex;
-        align-items:center;
+        align-items: center;
         h3 {
             margin-left: 1rem;
-            background-color:white;
+            background-color: white;
             color: #000;
             padding: 1rem;
         }
     }
-`
+`;
 
-export default ServicesSection
+export default ServicesSection;
