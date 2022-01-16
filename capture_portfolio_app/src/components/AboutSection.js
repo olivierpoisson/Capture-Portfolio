@@ -20,6 +20,7 @@ const AboutSection = () => {
                 <p>
                     Contact us for any photography or videography ideas that you have.
                     We have professionals with amazing sklls.
+                    
                 </p>
                 <button>Contact</button>
             </Description>
