@@ -9,9 +9,12 @@ export const About = styled(motion.div)`
     padding: 3rem 10rem;
     color: white;
     @media (max-width: 1300px) {
-        display: block;
+        /* display: block; */
         padding: 2rem 2rem;
         text-align: center;
+    }
+    @media (max-width: 1000px) {
+        display: block;
     }
 `;
 export const Description = styled.div`
