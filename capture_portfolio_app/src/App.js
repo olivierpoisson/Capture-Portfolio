@@ -27,7 +27,7 @@ function App() {
             >
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" exact element={<AboutUs />} />
-                    <Route path="/aboutus" exact element={<AboutUs />} />
+                    {/* <Route path="/aboutus" exact element={<AboutUs />} /> */}
                     <Route path="/ourwork" exact element={<OurWork />} />
                     <Route path="/ourwork/:id" element={<MovieDetail />} />
                     <Route path="/contactus" exact element={<ContactUs />} />
