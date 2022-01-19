@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -6,6 +6,13 @@ const GlobalStyles = createGlobalStyle`
         padding:0;
         box-sizing:border-box;
     }
+
+    html {
+        @media (max-width: 1600px) {font-size: 85%}
+        @media (max-width: 1500px) {font-size: 75%}
+
+    }
+
     body {
         background-color:#1b1b1b;
         font-family: "Inter", sans-serif;
@@ -48,6 +55,6 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1.4rem;
         line-height: 150%;
     }
-`
+`;
 
 export default GlobalStyles;
